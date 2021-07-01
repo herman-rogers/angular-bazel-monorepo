@@ -1,0 +1,22 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+    deps = [
+        "//:tsconfig",
+    ],
+)
+
+ts_project(
+    name = "app1",
+    srcs = ["app1.component.ts"],
+    tsc = "@npm//@angular/compiler-cli/bin:ngc",
+    declaration = True,
+    tsconfig = ":tsconfig",
+    deps = [
+      "@npm//@angular/core",
+      "@npm//@types/node",
+      "//packages/libOne"
+    ],
+)
