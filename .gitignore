@@ -107,3 +107,4 @@ dist
 bazel-out
 bazel-bin
 bazel-testlogs
+bazel-angular-bazel-monorepo

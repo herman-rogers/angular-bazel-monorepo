@@ -1,4 +1,5 @@
-load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
+load("@npm//@bazel/typescript:index.bzl", "ts_config")
+load("//tools:angular_ts_library.bzl", "ng_ts_project")
 
 ts_config(
     name = "tsconfig",
@@ -8,11 +9,9 @@ ts_config(
     ],
 )
 
-ts_project(
+ng_ts_project(
     name = "app1",
     srcs = ["app1.component.ts"],
-    tsc = "@npm//@angular/compiler-cli/bin:ngc",
-    declaration = True,
     tsconfig = ":tsconfig",
     deps = [
       "@npm//@angular/core",
