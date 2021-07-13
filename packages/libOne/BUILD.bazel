@@ -1,11 +1,20 @@
-load("//tools:angular_ts_library.bzl", "ng_ts_project")
+load("@npm//@bazel/typescript:index.bzl", "ts_config")
+load("//tools/libOne:angular_ts_library.bzl", "ng_ts_project")
 
 package(default_visibility = ["//visibility:public"])
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+    deps = [
+        "//:tsconfig",
+    ],
+)
 
 ng_ts_project(
     name = "libOne",
     srcs = ["libOne.ts"],
-    tsconfig = "//:tsconfig",
+    tsconfig = ":tsconfig",
     deps = [
       "@npm//@types/node",
       ":utilOne"
@@ -15,7 +24,7 @@ ng_ts_project(
 ng_ts_project(
     name = "utilOne",
     srcs = ["utilOne.ts"],
-    tsconfig = "//:tsconfig",
+    tsconfig = ":tsconfig",
     deps = [
       "@npm//@types/node",
     ],

@@ -1,8 +1,7 @@
 {
-  "name": "angular-bazel-monorepo",
+  "name": "app2",
   "version": "1.0.0",
-  "description": "Example angular bazel monorepo using rules_nodejs",
-  "main": "index.js",
+  "description": "example app in angular bazel monorepo",
   "scripts": {
     "build": "bazelisk build //...",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,12 +13,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@bazel/bazelisk": "^1.7.5",
-    "@bazel/typescript": "^3.2.3",
-    "@types/jasmine": "^3.6.9",
-    "@types/node": "^14.14.37",
-    "jasmine": "^3.7.0",
-    "jasmine-core": "^3.7.1",
+    "@angular/core": "10.0.0",
+    "@angular/compiler": "10.0.0",
+    "@angular/compiler-cli": "10.0.0",
     "rxjs": "^6.5.3",
     "typescript": "3.9.2"
   },

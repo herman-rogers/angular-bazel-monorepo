@@ -108,3 +108,5 @@ bazel-out
 bazel-bin
 bazel-testlogs
 bazel-angular-bazel-monorepo
+
+.DS_Store

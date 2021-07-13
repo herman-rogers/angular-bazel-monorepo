@@ -1,6 +1,11 @@
 workspace(
     name = "angular-bazel-monorepo",
-    managed_directories = {"@npm": ["node_modules"]},
+    managed_directories = {
+      "@npm": ["node_modules"],
+      "@npm_app1": ["projects/app1/node_modules"],
+      "@npm_app2": ["projects/app2/node_modules"],
+      "@npm_libOne": ["projects/libOne/node_modules"]
+    },
 )
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -18,4 +23,25 @@ yarn_install(
     name = "npm",
     package_json = "//:package.json",
     yarn_lock = "//:yarn.lock",
+)
+
+yarn_install(
+    name = "npm_app1",
+    package_json = "//projects/app1:package.json",
+    package_path = "projects/app1",
+    yarn_lock = "//projects/app1:yarn.lock",
+)
+
+yarn_install(
+    name = "npm_app2",
+    package_json = "//projects/app2:package.json",
+    package_path = "projects/app2",
+    yarn_lock = "//projects/app2:yarn.lock",
+)
+
+yarn_install(
+    name = "npm_libOne",
+    package_json = "//packages/libOne:package.json",
+    package_path = "packages/libOne",
+    yarn_lock = "//packages/libOne:yarn.lock",
 )
