@@ -24,6 +24,15 @@
       "./bazel-out/k8-dbg/bin/projects/app1",
       "./bazel-out/x64_windows-dbg/bin/projects/app1",
 
+      "./projects/app2",
+      "./bazel-out/host/bin/projects/app2",
+      "./bazel-out/darwin-fastbuild/bin/projects/app2",
+      "./bazel-out/k8-fastbuild/bin/projects/app2",
+      "./bazel-out/x64_windows-fastbuild/bin/projects/app2",
+      "./bazel-out/darwin-dbg/bin/projects/app2",
+      "./bazel-out/k8-dbg/bin/projects/app2",
+      "./bazel-out/x64_windows-dbg/bin/projects/app2",
+
       "./packages/libOne",
       "./bazel-out/host/bin/projects/libOne",
       "./bazel-out/darwin-fastbuild/bin/packages/libOne",
