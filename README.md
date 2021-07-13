@@ -13,10 +13,11 @@ Each package / project as its own tsconfig along with its own dependency chain (
 
 The current structure is:
 
-// at the root
-WORKSPACE
-package.json
-tsconfig.json
+> at the root
+
+- WORKSPACE
+- package.json
+- tsconfig.json
 
 - packages
   - libOne
