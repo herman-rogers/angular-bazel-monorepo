@@ -13,6 +13,9 @@
     "declaration": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
+    "paths": {
+      "@packages/*": ["./packages/*"]
+    },
     "rootDirs": [
       ".",
       "./projects/app1",
@@ -34,13 +37,22 @@
       "./bazel-out/x64_windows-dbg/bin/projects/app2",
 
       "./packages/libOne",
-      "./bazel-out/host/bin/projects/libOne",
+      "./bazel-out/host/bin/packages/libOne",
       "./bazel-out/darwin-fastbuild/bin/packages/libOne",
       "./bazel-out/k8-fastbuild/bin/packages/libOne",
       "./bazel-out/x64_windows-fastbuild/bin/packages/libOne",
       "./bazel-out/darwin-dbg/bin/packages/libOne",
       "./bazel-out/k8-dbg/bin/packages/libOne",
       "./bazel-out/x64_windows-dbg/bin/packages/libOne",
+
+      "./packages/libJs",
+      "./bazel-out/host/bin/packages/libJs",
+      "./bazel-out/darwin-fastbuild/bin/packages/libJs",
+      "./bazel-out/k8-fastbuild/bin/packages/libJs",
+      "./bazel-out/x64_windows-fastbuild/bin/packages/libJs",
+      "./bazel-out/darwin-dbg/bin/packages/libJs",
+      "./bazel-out/k8-dbg/bin/packages/libJs",
+      "./bazel-out/x64_windows-dbg/bin/packages/libJs",
     ]
   }
 }

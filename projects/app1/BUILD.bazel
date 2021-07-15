@@ -16,6 +16,7 @@ ng_ts_project(
     deps = [
       "@npm_app1//@angular/core",
       "@npm//@types/node",
-      "//packages/libOne"
+      "//packages/libOne",
+      "//packages/libJs",
     ],
 )
