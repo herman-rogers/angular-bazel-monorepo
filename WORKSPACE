@@ -1,10 +1,10 @@
 workspace(
     name = "angular-bazel-monorepo",
     managed_directories = {
-      "@npm": ["node_modules"],
-      "@npm_app1": ["projects/app1/node_modules"],
-      "@npm_app2": ["projects/app2/node_modules"],
-      "@npm_libOne": ["projects/libOne/node_modules"]
+        "@npm": ["node_modules"],
+        "@npm_app1": ["projects/app1/node_modules"],
+        "@npm_app2": ["projects/app2/node_modules"],
+        "@npm_libOne": ["projects/libOne/node_modules"],
     },
 )
 

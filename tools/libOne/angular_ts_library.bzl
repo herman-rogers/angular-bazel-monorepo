@@ -6,5 +6,5 @@ def ng_ts_project(**kwargs):
     ts_project(
         tsc = "@npm_libOne//@angular/compiler-cli/bin:ngc",
         declaration = True,
-        **kwargs,
+        **kwargs
     )
