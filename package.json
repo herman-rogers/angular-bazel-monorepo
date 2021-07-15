@@ -4,6 +4,7 @@
   "description": "Example angular bazel monorepo using rules_nodejs",
   "main": "index.js",
   "scripts": {
+    "generate-types": "tsc packages/**/*.js --declaration --allowJs --emitDeclarationOnly",
     "build": "bazelisk build //...",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
