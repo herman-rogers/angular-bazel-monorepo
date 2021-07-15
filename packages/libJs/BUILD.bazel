@@ -14,20 +14,28 @@ ts_config(
 js_library(
     name = "js",
     srcs = [
-      "lib.d.ts",
-      "lib.js",
+        "lib.d.ts",
+        "lib.js",
     ],
 )
 
 ts_project(
-    name = "libJs",
+    name = "ts",
     srcs = [
-      "index.ts",
+        "index.ts",
     ],
     declaration = True,
     tsconfig = ":tsconfig",
-    deps = [  
-      ":js",
-      "@npm//@types/node",
+    deps = [
+        ":js",
+        "@npm//@types/node",
+    ],
+)
+
+js_library(
+    name = "libJs",
+    package_name = "@packages/libJs",
+    deps = [
+        ":ts",
     ],
 )

@@ -14,8 +14,8 @@ ng_ts_project(
     srcs = ["app2.component.ts"],
     tsconfig = ":tsconfig",
     deps = [
-      "@npm_app2//@angular/core",
-      "@npm//@types/node",
-      "//packages/libOne"
+        "//packages/libOne",
+        "@npm//@types/node",
+        "@npm_app2//@angular/core",
     ],
 )

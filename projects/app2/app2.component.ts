@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { fakeLib } from '../../packages/libOne/libOne';
-import { utilOne } from '../../packages/libOne/utilOne';
+import { fakeLib, utilOne } from '@packages/libOne';
+import { fakeJsLib } from '@packages/libJs';
 
 @Component({
   template: `<p>App2 Component</p>`,
