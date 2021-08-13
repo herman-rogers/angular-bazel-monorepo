@@ -1,0 +1,14 @@
+load("//tools/app2:angular_ts_library.bzl", "ng_ts_project")
+
+package(default_visibility = ["//visibility:public"])
+
+ng_ts_project(
+    name = "button",
+    srcs = glob(["*.ts"]),
+    tsconfig = "//projects/app2:tsconfig",
+    deps = [
+        "@npm//@types/node",
+        "@npm_app2//@angular/core",
+        "@npm_app2//@angular/material",
+    ],
+)

@@ -1,6 +1,8 @@
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
 load("//tools/app2:angular_ts_library.bzl", "ng_ts_project")
 
+package(default_visibility = ["//visibility:public"])
+
 ts_config(
     name = "tsconfig",
     src = "tsconfig.json",
@@ -11,11 +13,13 @@ ts_config(
 
 ng_ts_project(
     name = "app2",
-    srcs = ["app2.component.ts"],
+    srcs = glob(["*.ts"]),
     tsconfig = ":tsconfig",
     deps = [
         "//packages/libOne",
+        "//projects/app2/button",
         "@npm//@types/node",
         "@npm_app2//@angular/core",
+        "@npm_app2//@angular/common",
     ],
 )
