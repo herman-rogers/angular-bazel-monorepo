@@ -17,6 +17,7 @@ ng_ts_project(
     tsconfig = ":tsconfig",
     deps = [
         "//packages/libOne",
+        "//packages/angularLib",
         "//projects/app2/button",
         "@npm//@types/node",
         "@npm_app2//@angular/core",
