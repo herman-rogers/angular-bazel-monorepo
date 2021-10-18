@@ -22,5 +22,6 @@ ng_ts_project(
         "@npm//@types/node",
         "@npm_app2//@angular/core",
         "@npm_app2//@angular/common",
+        "@npm_angularLib//@angular/common",
     ],
 )

@@ -1,0 +1,28 @@
+{
+  "name": "ang-lib",
+  "version": "1.0.0",
+  "description": "example angular library",
+  "scripts": {
+    "build": "bazelisk build //...",
+    "postinstall": "ngcc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herman-rogers/angular-bazel-monorepo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/core": "10.0.0",
+    "@angular/common": "10.0.0",
+    "@angular/compiler": "10.0.0",
+    "@angular/compiler-cli": "10.0.0",
+    "rxjs": "^6.5.3",
+    "typescript": "3.9.2"
+  },
+  "bugs": {
+    "url": "https://github.com/herman-rogers/angular-bazel-monorepo/issues"
+  },
+  "homepage": "https://github.com/herman-rogers/angular-bazel-monorepo#readme"
+}
