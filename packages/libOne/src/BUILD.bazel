@@ -4,27 +4,10 @@ load("//tools/libOne:angular_ts_library.bzl", "ng_ts_project")
 
 package(default_visibility = ["//visibility:public"])
 
-ts_config(
-    name = "tsconfig",
-    src = "tsconfig.json",
-    deps = [
-        "//:tsconfig",
-    ],
-)
-
 ng_ts_project(
-    name = "ts",
-    srcs = ["index.ts"],
+    name = "src",
+    srcs = glob(["*.ts"]),
     deps = [
         "@npm//@types/node",
-        "//packages/libOne/src",
-    ],
-)
-
-js_library(
-    name = "libOne",
-    package_name = "@packages/libOne",
-    deps = [
-        ":ts",
     ],
 )

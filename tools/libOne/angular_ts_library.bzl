@@ -5,6 +5,7 @@ load("@npm//@bazel/typescript:index.bzl", "ts_project")
 def ng_ts_project(**kwargs):
     ts_project(
         tsc = "@npm_libOne//@angular/compiler-cli/bin:ngc",
+        tsconfig = "//packages/libOne:tsconfig",
         declaration = True,
         **kwargs
     )

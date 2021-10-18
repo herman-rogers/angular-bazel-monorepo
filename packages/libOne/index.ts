@@ -1,2 +1,2 @@
-export * from './libOne';
-export * from './utilOne';
+export * from './src/libOne';
+export * from './src/utilOne';

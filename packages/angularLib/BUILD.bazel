@@ -19,7 +19,6 @@ ng_ts_project(
         "ang-lib.component.ts",
         "ang-lib.module.ts",
     ],
-    tsconfig = ":tsconfig",
     deps = [
         "@npm_angularLib//@angular/common",
     ],

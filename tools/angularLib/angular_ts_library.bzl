@@ -6,5 +6,6 @@ def ng_ts_project(**kwargs):
     ts_project(
         tsc = "@npm_angularLib//@angular/compiler-cli/bin:ngc",
         declaration = True,
+        tsconfig = "//packages/angularLib:tsconfig",
         **kwargs
     )
