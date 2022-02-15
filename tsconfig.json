@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "module": "es2020",
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "es5",
@@ -8,15 +9,12 @@
       "es2015.iterable",
       "es2015.promise"
     ],
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
-    "moduleResolution": "node",
-    "composite": false,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
+    // Permit decorator syntax
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Custom Library Paths
     "baseUrl": ".",
     "paths": {
       "@packages/*": ["./packages/*"],
@@ -27,6 +25,8 @@
     "rootDirs": [
       ".",
 
+      // Add all possible bazel-out directories
+      // See https://github.com/microsoft/TypeScript/issues/37257
       // app1
       "./projects/app1",
       "./bazel-out/host/bin/projects/app1",
@@ -77,8 +77,5 @@
       "./bazel-out/k8-dbg/bin/packages/angularLib/src",
       "./bazel-out/x64_windows-dbg/bin/packages/angularLib/src"
     ]
-  },
-  "angularCompilerOptions": {
-    "enableIvy": true
   }
 }
