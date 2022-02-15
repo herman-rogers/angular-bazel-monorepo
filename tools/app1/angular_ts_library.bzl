@@ -6,5 +6,6 @@ def ng_ts_project(**kwargs):
     ts_project(
         tsc = "@npm_app1//@angular/compiler-cli/bin:ngc",
         declaration = True,
+        declaration_map = True,
         **kwargs
     )
