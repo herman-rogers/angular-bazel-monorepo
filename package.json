@@ -2,7 +2,6 @@
   "name": "angular-bazel-monorepo",
   "version": "1.0.0",
   "description": "Example angular bazel monorepo using rules_nodejs",
-  "main": "index.js",
   "scripts": {
     "generate:types": "tsc packages/**/*.js --declaration --allowJs --emitDeclarationOnly",
     "lint:bazel": "buildifier -r packages projects",
