@@ -5,6 +5,8 @@ load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
 load("@npm//history-server:index.bzl", "history_server")
 
+package(default_visibility = ["//:__subpackages__"])
+
 ts_config(
     name = "tsconfig",
     src = "tsconfig.json",
@@ -19,7 +21,6 @@ ng_ts_project(
         "main.dev.ts", 
         # "main.prod.ts",
     ],
-    # tsconfig = ":tsconfig",
     deps = [
         "//projects/project_one/src/app",
         "@npm_project_one//@angular/core",
