@@ -19,10 +19,14 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@packages/*": ["./packages/*"]
+      "@packages/*": ["./packages/*"],
+      "@packages/angularLib/*": [
+        "./bazel-out/darwin-fastbuild/bin/packages/angularLib/src/*"
+      ]
     },
     "rootDirs": [
       ".",
+
       // app1
       "./projects/app1",
       "./bazel-out/host/bin/projects/app1",
@@ -64,14 +68,14 @@
       "./bazel-out/x64_windows-dbg/bin/packages/libJs",
 
       // angularLib
-      "./packages/angularLib",
-      "./bazel-out/host/bin/packages/angularLib",
-      "./bazel-out/darwin-fastbuild/bin/packages/angularLib",
-      "./bazel-out/k8-fastbuild/bin/packages/angularLib",
-      "./bazel-out/x64_windows-fastbuild/bin/packages/angularLib",
-      "./bazel-out/darwin-dbg/bin/packages/angularLib",
-      "./bazel-out/k8-dbg/bin/packages/angularLib",
-      "./bazel-out/x64_windows-dbg/bin/packages/angularLib"
+      // "./packages/angularLib/src",
+      "./bazel-out/host/bin/packages/angularLib/src",
+      "./bazel-out/darwin-fastbuild/bin/packages/angularLib/src",
+      "./bazel-out/k8-fastbuild/bin/packages/angularLib/src",
+      "./bazel-out/x64_windows-fastbuild/bin/packages/angularLib/src",
+      "./bazel-out/darwin-dbg/bin/packages/angularLib/src",
+      "./bazel-out/k8-dbg/bin/packages/angularLib/src",
+      "./bazel-out/x64_windows-dbg/bin/packages/angularLib/src"
     ]
   },
   "angularCompilerOptions": {
