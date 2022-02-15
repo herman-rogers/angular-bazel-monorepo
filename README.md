@@ -1,4 +1,5 @@
 # angular-bazel-monorepo
+
 Example angular bazel monorepo using rules_nodejs
 
 Run `yarn build` to build all projects and packages.
@@ -20,12 +21,14 @@ The current structure is:
 - tsconfig.json
 
 - packages
+
   - libOne
     - tsconfig.json
     - package.json
 
 - projects
-  - app1
+
+  - project_one
     - tsconfig.json
     - package.json
   - app2
@@ -34,9 +37,8 @@ The current structure is:
 
 - tools
   - libOne
-  - app1
+  - project_one
   - app2
-
 
 ## Javascript Library
 
