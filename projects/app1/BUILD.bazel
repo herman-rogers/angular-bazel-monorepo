@@ -14,21 +14,32 @@ ts_config(
 )
 
 ng_ts_project(
+    name = "app",
+    srcs = glob(
+        include = ["app.module.ts", "app.component.ts"],
+    ),
+    # angular_assets = ["app.component.html"],
+    tsconfig = ":tsconfig",
+    deps = [
+        "@npm_app1//@angular/common",
+        "@npm_app1//@angular/core",
+        # "@npm//@angular/platform-browser",
+    ],
+)
+
+ng_ts_project(
     name = "src",
     srcs = [
         "main.dev.ts", 
-        "app1.module.ts", 
-        "app1.component.ts",
+        # "main.prod.ts",
     ],
     tsconfig = ":tsconfig",
     deps = [
 #        "//packages/libJs",
 #        "//packages/libOne",
-        "@npm_app1//zone.js",
+        ":app",
         "@npm//@types/node",
         "@npm_app1//@angular/core",
-#        "@npm_app1//@angular/common",
-        "@npm_app1//@angular/platform-browser-dynamic",
         "@npm_app1//@angular/platform-browser",
     ],
 )
