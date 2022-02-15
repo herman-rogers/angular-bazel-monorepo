@@ -10,6 +10,18 @@ workspace(
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+http_archive(
+name = "io_bazel_rules_webtesting",
+sha256 = "f1f4d2c2f88d2beac64c82499a1e762b037966675dd892da89c87e39d72b33f6",
+urls = [
+"https://github.com/bazelbuild/rules_webtesting/releases/download/0.3.2/rules_webtesting.tar.gz",
+],
+)
+
+load("@io_bazel_rules_webtesting//web:repositories.bzl", "web_test_repositories")
+
+web_test_repositories()
+
 # https://github.com/bazelbuild/rules_nodejs/releases
 http_archive(
     name = "build_bazel_rules_nodejs",

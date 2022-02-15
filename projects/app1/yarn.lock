@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@angular/common@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-10.0.0.tgz#a819dacbf3b9a3629f7e0d43a504cdd3b5fad58d"
+  integrity sha512-zaLHMRQqjZyoIc15tLGrwg5ugcVlggqATiMlMVNo9ddqxwpZ4qHK2fdAvqQy9FfWKaPGi6NpIBSR31RGV0ircw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular/compiler-cli@10.0.0":
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-10.0.0.tgz#6fe60e239b01fd10d3923a3de88877512e0e2d40"
@@ -32,6 +39,13 @@
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-10.0.0.tgz#b199450576f8acc0549d2836cfa04294fa3a585e"
   integrity sha512-N1m6op428ktgcsnXqqspb1xGZ9gp664Jmb4JoVajCD3JXucRfidw+vt3kPOldbWA6M4pIu5ZtZY3IZc2GrK5UQ==
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular/platform-browser-dynamic@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-10.0.0.tgz#edf99f3276fa4f13a2a533f742053286fb005354"
+  integrity sha512-Ol9dMU/UB8PZ1xQkcILmANC+tA1Y/6YeYc8+MYnZUH7uAMXV6kscg9C5fK9JixSldOOS05AQZAdEty9ESjFNNg==
   dependencies:
     tslib "^2.0.0"
 

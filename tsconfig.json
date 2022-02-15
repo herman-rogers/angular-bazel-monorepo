@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
     "strict": true,
-    "lib": ["ES2015", "ES2016.Array.Include", "DOM"],
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.collection",
+      "es2015.iterable",
+      "es2015.promise"
+    ],
+    "importHelpers": true,
     "target": "es2015",
-    "module": "es2015",
+    "module": "es2020",
     "moduleResolution": "node",
     "composite": false,
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@packages/*": ["./packages/*"]
@@ -65,5 +73,8 @@
       "./bazel-out/k8-dbg/bin/packages/angularLib",
       "./bazel-out/x64_windows-dbg/bin/packages/angularLib"
     ]
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true
   }
 }

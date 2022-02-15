@@ -1,5 +1,7 @@
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
 load("//tools/app1:angular_ts_library.bzl", "ng_ts_project")
+load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
+load("@npm//@bazel/concatjs:index.bzl", "concatjs_devserver")
 
 ts_config(
     name = "tsconfig",
@@ -11,12 +13,44 @@ ts_config(
 
 ng_ts_project(
     name = "app1",
-    srcs = ["app1.component.ts"],
+    srcs = ["main.dev.ts", "app1.module.ts", "app1.component.ts"],
     tsconfig = ":tsconfig",
     deps = [
-        "//packages/libJs",
-        "//packages/libOne",
+#        "//packages/libJs",
+#        "//packages/libOne",
         "@npm//@types/node",
         "@npm_app1//@angular/core",
+#        "@npm_app1//@angular/common",
+        "@npm_app1//@angular/platform-browser-dynamic",
     ],
+)
+
+html_insert_assets(
+    name = "inject_scripts_for_dev",
+    outs = ["index.html"],
+    args = [
+        "--html=$(execpath :index.dev.html)",
+        "--out=$@",
+        "--roots=. $(RULEDIR)",
+        "--assets",
+    ] + [
+        # This file doesn't exist during the build, but will be served by ts_devserver
+        "./_/ts_scripts.js",
+    ],
+    data = [
+        ":index.dev.html",
+    ]
+)
+
+concatjs_devserver(
+    name = "devserver",
+    entry_module = "angular-bazel-monorepo/projects/app1/main.dev",
+    port = 4200,
+    scripts = [
+
+    ],
+    static_files = [
+        ":inject_scripts_for_dev"
+    ],
+    deps = [":app1"],
 )
