@@ -2,7 +2,7 @@ workspace(
     name = "angular-bazel-monorepo",
     managed_directories = {
         "@npm": ["node_modules"],
-        "@npm_app1": ["projects/app1/node_modules"],
+        "@npm_project_one": ["projects/project_one/node_modules"],
         "@npm_app2": ["projects/app2/node_modules"],
         "@npm_libOne": ["projects/libOne/node_modules"],
     },
@@ -46,10 +46,10 @@ yarn_install(
 )
 
 yarn_install(
-    name = "npm_app1",
-    package_json = "//projects/app1:package.json",
-    package_path = "projects/app1",
-    yarn_lock = "//projects/app1:yarn.lock",
+    name = "npm_project_one",
+    package_json = "//projects/project_one:package.json",
+    package_path = "projects/project_one",
+    yarn_lock = "//projects/project_one:yarn.lock",
     exports_directories_only = False,
 )
 

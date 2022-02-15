@@ -1,6 +1,6 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
-load("//tools/app1:angular_ts_library.bzl", "ng_ts_project")
+load("//tools/project_one:angular_ts_library.bzl", "ng_ts_project")
 load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
 load("@npm//history-server:index.bzl", "history_server")
@@ -14,31 +14,16 @@ ts_config(
 )
 
 ng_ts_project(
-    name = "app",
-    srcs = glob(
-        include = ["app.module.ts", "app.component.ts"],
-    ),
-    # angular_assets = ["app.component.html"],
-    tsconfig = ":tsconfig",
-    deps = [
-        "@npm_app1//@angular/common",
-        "@npm_app1//@angular/core",
-        "@npm_app1//@angular/platform-browser",
-    ],
-)
-
-ng_ts_project(
     name = "src",
     srcs = [
         "main.dev.ts", 
         # "main.prod.ts",
     ],
-    tsconfig = ":tsconfig",
+    # tsconfig = ":tsconfig",
     deps = [
-        ":app",
-        "@npm//@types/node",
-        "@npm_app1//@angular/core",
-        "@npm_app1//@angular/platform-browser",
+        "//projects/project_one/src/app",
+        "@npm_project_one//@angular/core",
+        "@npm_project_one//@angular/platform-browser",
     ],
 )
 
@@ -57,7 +42,7 @@ _ASSETS = [
     # Also it's tricky to configure dead code elimination to understand that
     # zone.js is used, given that we don't have any import statement that
     # imports from it.
-    "@npm_app1//:node_modules/zone.js/dist/zone.min.js",
+    "@npm_project_one//:node_modules/zone.js/dist/zone.min.js",
 ]
 
 rollup_bundle(

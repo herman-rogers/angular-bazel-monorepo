@@ -4,7 +4,8 @@ load("@npm//@bazel/typescript:index.bzl", "ts_project")
 
 def ng_ts_project(**kwargs):
     ts_project(
-        tsc = "@npm_app1//@angular/compiler-cli/bin:ngc",
+        tsc = "@npm_project_one//@angular/compiler-cli/bin:ngc",
+        tsconfig = "//projects/project_one:tsconfig"
         declaration = True,
         declaration_map = True,
         **kwargs
