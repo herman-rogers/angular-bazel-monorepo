@@ -14,6 +14,8 @@
   "license": "MIT",
   "devDependencies": {
     "@angular/core": "10.0.0",
+    "@angular/common": "10.0.0",
+    "@angular/platform-browser-dynamic": "10.0.0",
     "@angular/compiler": "10.0.0",
     "@angular/compiler-cli": "10.0.0",
     "rxjs": "^6.5.3",

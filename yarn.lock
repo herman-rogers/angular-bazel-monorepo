@@ -12,6 +12,30 @@
   resolved "https://registry.yarnpkg.com/@bazel/buildifier/-/buildifier-4.0.1.tgz#52cfbad5cbb86e9183a29dde2370cd465730ea0d"
   integrity sha512-BTmtvJbeeEVrqRApI1gr5hvPgYcHLpdGJ5EXNXEWO692ztMPSj5fB/dH0xUlaW45jn6LimYx8ymqTMhj3538og==
 
+"@bazel/concatjs@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@bazel/concatjs/-/concatjs-3.8.0.tgz#a6b2483f7799c58652fbe5347ab2b3063a1ae6ad"
+  integrity sha512-Qi/Glf407LKz7wC3VAGwtm+Sjr/b+RLv7ESdlMekOlzMCK83OWA0aNhKtbSKZ36hJ/ToDgEWtjus7o6svsJECQ==
+  dependencies:
+    protobufjs "6.8.8"
+    source-map-support "0.5.9"
+    tsutils "2.27.2"
+
+"@bazel/protractor@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@bazel/protractor/-/protractor-3.8.0.tgz#b04999a6156bcc24f3819ee61b2b068cdbe0e309"
+  integrity sha512-NODXkhD3IWGM4MIBZ/0OQBRf8iIAZzUCRh62C0KFOsVAjhdyTChKVzIMjUn6vw6xcdk/TR1BxKfd/M/GYlStDA==
+
+"@bazel/rollup@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@bazel/rollup/-/rollup-3.8.0.tgz#850f56176d73e3b7d99a43c7e33df21ecc6ac161"
+  integrity sha512-u63ubqYtfQhOu8Km3uYdhKa6qiLSlOKYsWwMP1xGkkXzu1hOiUznN1N7q8gCF1BV2DMy1D5IYkv+Xg4a+LEiBA==
+
+"@bazel/terser@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@bazel/terser/-/terser-3.8.0.tgz#96d337b62b2ba18e2fe00984cca950cda899d165"
+  integrity sha512-c7cGIltFUI7prRocMDZ3qZVERnew81SFheuI5B9RQ3qeqTlJmlV8B8GI9FPG+7Ut69bmwn8es6UyPaH0iBnsQw==
+
 "@bazel/typescript@^3.8.0":
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/@bazel/typescript/-/typescript-3.8.0.tgz#725d51a1c25e314a1d8cddb8b880ac05ba97acd4"
@@ -135,6 +159,14 @@ glob@^7.1.6:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+html-insert-assets@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/html-insert-assets/-/html-insert-assets-0.10.0.tgz#4630adf038b1b2895585ea2e24dba7583fb51946"
+  integrity sha512-XaiJOrlsuQ10z3ImvwWAu1fY/cRpmOxTtiDwAN4Cnw6Ppl7j3y+u9/Ozmb3zpUjnoCqDyYPtKpw+Hc23gYuT/Q==
+  dependencies:
+    mkdirp "^1.0.3"
+    parse5 "^6.0.0"
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
@@ -173,12 +205,22 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
+mkdirp@^1.0.3:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
+  integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
+
 once@^1.3.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
   dependencies:
     wrappy "1"
+
+parse5@^6.0.0:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
+  integrity sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
