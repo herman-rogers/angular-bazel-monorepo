@@ -29,13 +29,12 @@
       // See https://github.com/microsoft/TypeScript/issues/37257
       // app1
       "./projects/app1",
-      "./bazel-out/host/bin/projects/app1",
-      "./bazel-out/darwin-fastbuild/bin/projects/app1",
-      "./bazel-out/k8-fastbuild/bin/projects/app1",
-      "./bazel-out/x64_windows-fastbuild/bin/projects/app1",
       "./bazel-out/darwin-dbg/bin/projects/app1",
+      "./bazel-out/darwin-fastbuild/bin/projects/app1",
       "./bazel-out/k8-dbg/bin/projects/app1",
+      "./bazel-out/k8-fastbuild/bin/projects/app1",
       "./bazel-out/x64_windows-dbg/bin/projects/app1",
+      "./bazel-out/x64_windows-fastbuild/bin/projects/app1",
 
       // app2
       "./projects/app2",
