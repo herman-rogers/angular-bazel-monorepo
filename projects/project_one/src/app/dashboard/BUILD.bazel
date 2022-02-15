@@ -3,13 +3,11 @@ load("//tools/project_one:angular_ts_library.bzl", "ng_ts_project")
 package(default_visibility = ["//:__subpackages__"])
 
 ng_ts_project(
-    name = "app",
-    srcs = ["app.module.ts", "app.component.ts"],
+    name = "dashboard",
+    srcs = glob(["*.ts"]),
+    # angular_assets = ["app.component.html"],
     deps = [
-        "//projects/project_one/src/app/dashboard",
-        "@npm_project_one//@angular/common",
         "@npm_project_one//@angular/core",
         "@npm_project_one//@angular/material",
-        "@npm_project_one//@angular/platform-browser",
     ],
 )
