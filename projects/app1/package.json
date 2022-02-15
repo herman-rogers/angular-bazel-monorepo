@@ -4,7 +4,8 @@
   "description": "example app in angular bazel monorepo",
   "scripts": {
     "build": "bazelisk build //...",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "ngcc"
   },
   "repository": {
     "type": "git",
@@ -13,16 +14,20 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@angular/core": "10.0.0",
     "@angular/common": "10.0.0",
-    "@angular/platform-browser-dynamic": "10.0.0",
     "@angular/compiler": "10.0.0",
     "@angular/compiler-cli": "10.0.0",
+    "@angular/core": "10.0.0",
+    "@angular/platform-browser": "10.0.0",
+    "@angular/platform-browser-dynamic": "10.0.0",
     "rxjs": "^6.5.3",
     "typescript": "3.9.2"
   },
   "bugs": {
     "url": "https://github.com/herman-rogers/angular-bazel-monorepo/issues"
   },
-  "homepage": "https://github.com/herman-rogers/angular-bazel-monorepo#readme"
+  "homepage": "https://github.com/herman-rogers/angular-bazel-monorepo#readme",
+  "dependencies": {
+    "zone.js": "^0.11.4"
+  }
 }
