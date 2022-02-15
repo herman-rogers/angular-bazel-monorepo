@@ -5,7 +5,7 @@
   "scripts": {
     "build": "bazelisk build //...",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "ngcc"
+    "postinstall": "node_modules/.bin/ngcc --async --properties fesm2015"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/herman-rogers/angular-bazel-monorepo#readme",
   "dependencies": {
-    "zone.js": "^0.11.4"
+    "zone.js": "^0.10.3"
   }
 }

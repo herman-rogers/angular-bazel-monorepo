@@ -23,7 +23,7 @@ ng_ts_project(
     deps = [
         "@npm_app1//@angular/common",
         "@npm_app1//@angular/core",
-        # "@npm//@angular/platform-browser",
+        "@npm_app1//@angular/platform-browser",
     ],
 )
 
@@ -35,8 +35,6 @@ ng_ts_project(
     ],
     tsconfig = ":tsconfig",
     deps = [
-#        "//packages/libJs",
-#        "//packages/libOne",
         ":app",
         "@npm//@types/node",
         "@npm_app1//@angular/core",
@@ -66,7 +64,6 @@ rollup_bundle(
     name = "bundle-es2015",
     config_file = "rollup.config.js",
     entry_points = {
-        # ":main.prod.ts": "index.prod",
         ":main.dev.ts": "index.dev",
     },
     output_dir = True,
@@ -96,7 +93,7 @@ html_insert_assets(
 
 pkg_web(
     name = "devapp",
-    srcs = [
+    srcs = _ASSETS + [
         ":bundle-es2015",
         ":inject_scripts_for_dev",
         # "//src/assets",
@@ -107,8 +104,8 @@ pkg_web(
     # In production mode we serve some polyfills with script tags that have hard-coded paths in the index.html
     # so we must serve them at that path, by stripping a prefix
     additional_root_paths = [
-        "npm/node_modules/core-js/client",
         "npm/node_modules/systemjs/dist",
+        "npm/node_modules/core-js/client",
     ],
 )
 
