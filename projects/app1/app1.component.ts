@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-component',
-  template: `<p>App1 Component</p>`,
+  template: `<p>This is App One</p>`,
 })
 export class App1Component {
   example: string = '';
