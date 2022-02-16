@@ -143,9 +143,9 @@ html_insert_assets(
     name = "inject_scripts_for_prod",
     # we can't output "index.html" since that collides with the devmode file.
     # pkg_web rule will re-root paths that start with _{name} by default
-    # so we output "_prodapp/index.html" so that it is mapped to
+    # so we output "_prodapp/projects/project_two/index.html" so that it is mapped to
     # `index.html` in the web package.
-    outs = ["_prodapp/index.html"],
+    outs = ["_prodapp/projects/project_two/index.html"],
     args = [
         "--html=$(execpath :index.prod.html)",
         "--out=$@",
