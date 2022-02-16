@@ -3,8 +3,8 @@ import { fakeLib, utilOne } from '@packages/libOne';
 // import { fakeJsLib } from '@packages/libJs';
 
 @Component({
-  template: `<p>App2 Component</p>`,
+  template: `<p>App Two Component</p>`,
 })
-export class App2Component {
+export class AppComponent {
   example: string = '';
 }

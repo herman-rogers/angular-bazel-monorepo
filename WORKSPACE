@@ -3,7 +3,7 @@ workspace(
     managed_directories = {
         "@npm": ["node_modules"],
         "@npm_project_one": ["projects/project_one/node_modules"],
-        "@npm_app2": ["projects/app2/node_modules"],
+        "@npm_project_two": ["projects/project_two/node_modules"],
         "@npm_libOne": ["projects/libOne/node_modules"],
     },
 )
@@ -54,10 +54,10 @@ yarn_install(
 )
 
 yarn_install(
-    name = "npm_app2",
-    package_json = "//projects/app2:package.json",
-    package_path = "projects/app2",
-    yarn_lock = "//projects/app2:yarn.lock",
+    name = "npm_project_two",
+    package_json = "//projects/project_two:package.json",
+    package_path = "projects/project_two",
+    yarn_lock = "//projects/project_two:yarn.lock",
     exports_directories_only = False,
 )
 

@@ -37,15 +37,15 @@
       "./bazel-out/x64_windows-dbg/bin/projects/project_one",
       "./bazel-out/x64_windows-fastbuild/bin/projects/project_one",
 
-      // app2
-      "./projects/app2",
-      "./bazel-out/host/bin/projects/app2",
-      "./bazel-out/darwin-fastbuild/bin/projects/app2",
-      "./bazel-out/k8-fastbuild/bin/projects/app2",
-      "./bazel-out/x64_windows-fastbuild/bin/projects/app2",
-      "./bazel-out/darwin-dbg/bin/projects/app2",
-      "./bazel-out/k8-dbg/bin/projects/app2",
-      "./bazel-out/x64_windows-dbg/bin/projects/app2",
+      // project_two
+      "./projects/project_two",
+      "./bazel-out/host/bin/projects/project_two",
+      "./bazel-out/darwin-fastbuild/bin/projects/project_two",
+      "./bazel-out/k8-fastbuild/bin/projects/project_two",
+      "./bazel-out/x64_windows-fastbuild/bin/projects/project_two",
+      "./bazel-out/darwin-dbg/bin/projects/project_two",
+      "./bazel-out/k8-dbg/bin/projects/project_two",
+      "./bazel-out/x64_windows-dbg/bin/projects/project_two",
 
       // libOne
       "./packages/libOne",

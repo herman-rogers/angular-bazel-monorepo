@@ -31,14 +31,14 @@ The current structure is:
   - project_one
     - tsconfig.json
     - package.json
-  - app2
+  - project_two
     - tsconfig.json
     - package.json
 
 - tools
   - libOne
   - project_one
-  - app2
+  - project_two
 
 ## Javascript Library
 

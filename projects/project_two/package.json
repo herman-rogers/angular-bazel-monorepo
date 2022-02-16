@@ -1,5 +1,5 @@
 {
-  "name": "app2",
+  "name": "project_two",
   "version": "1.0.0",
   "description": "example app in angular bazel monorepo",
   "scripts": {
