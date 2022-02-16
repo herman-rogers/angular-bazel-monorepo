@@ -4,6 +4,8 @@ load("//tools/project_one:angular_ts_library.bzl", "ng_ts_project")
 load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
 load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+load("@npm//@babel/cli:index.bzl", "babel")
+load("@npm//@bazel/terser:index.bzl", "terser_minified")
 load("@npm//history-server:index.bzl", "history_server")
 
 package(default_visibility = ["//:__subpackages__"])
@@ -25,7 +27,7 @@ ng_ts_project(
     name = "src",
     srcs = [
         "main.dev.ts", 
-        # "main.prod.ts",
+        "main.prod.ts",
     ],
     deps = [
         "//projects/project_one/src/app",
@@ -56,6 +58,7 @@ rollup_bundle(
     config_file = "rollup.config.js",
     entry_points = {
         ":main.dev.ts": "index.dev",
+        ":main.prod.ts": "index.prod",
     },
     output_dir = True,
     deps = [
@@ -65,6 +68,25 @@ rollup_bundle(
     ],
 )
 
+babel(
+    name = "bundle-es5",
+    args = [
+        "$(execpath :bundle-es2015)",
+        "--no-babelrc",
+        "--source-maps",
+        "--presets=@babel/preset-env",
+        "--plugins=@babel/plugin-transform-modules-systemjs",
+        "--out-dir",
+        "$(@D)",
+    ],
+    data = [
+        ":bundle-es2015",
+        "@npm//@babel/preset-env",
+    ],
+    output_dir = True,
+)
+
+### Bazel Rules for Development Server
 html_insert_assets(
     name = "inject_scripts_for_dev",
     outs = ["index.html"],
@@ -104,4 +126,63 @@ history_server(
     name = "devserver",
     data = [":devapp"],
     templated_args = ["-a $$(rlocation $(rootpath :devapp)) -p 4200"],
+)
+
+### Bazel Rules for Production Server
+terser_minified(
+    name = "bundle-es2015.min",
+    src = ":bundle-es2015",
+)
+
+terser_minified(
+    name = "bundle-es5.min",
+    src = ":bundle-es5",
+)
+
+html_insert_assets(
+    name = "inject_scripts_for_prod",
+    # we can't output "index.html" since that collides with the devmode file.
+    # pkg_web rule will re-root paths that start with _{name} by default
+    # so we output "_prodapp/projects/project_one/index.html" so that it is mapped to
+    # `index.html` in the web package.
+    outs = ["_prodapp/projects/project_one/index.html"],
+    args = [
+        "--html=$(execpath :index.prod.html)",
+        "--out=$@",
+        "--roots=. $(RULEDIR)",
+        "--assets",
+    ] + ["$(execpath %s)" % s for s in _ASSETS] + [
+        "--scripts --module $(execpath :bundle-es2015.min)/index.prod.js",
+        "--scripts --nomodule $(execpath :bundle-es5.min)/index.prod.js",
+    ],
+    data = [
+        ":index.prod.html",
+        ":bundle-es2015.min",
+        ":bundle-es5.min",
+    ] + _ASSETS,
+)
+
+pkg_web(
+    name = "prodapp",
+    srcs = _ASSETS + [
+        ":bundle-es2015.min",
+        ":bundle-es5.min",
+        # each injected index file should be listed here
+        ":inject_scripts_for_prod",
+        # Include polyfills that will be requested by old browsers
+        "@npm//:node_modules/systemjs/dist/system.js",
+        "@npm//:node_modules/core-js/client/core.min.js",
+    ],
+    # In production mode we serve some polyfills with script tags that have hard-coded paths in the index.html
+    # so we must serve them at that path, by stripping a prefix
+    additional_root_paths = [
+        "npm/node_modules/core-js/client",
+        "npm/node_modules/systemjs/dist",
+    ],
+)
+
+history_server(
+    name = "prodserver",
+    data = [":prodapp"],
+    templated_args = ["-a $$(rlocation $(rootpath :prodapp)) -p 4200"],
 )

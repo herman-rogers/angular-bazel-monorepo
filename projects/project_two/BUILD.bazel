@@ -1,11 +1,11 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
 load("//tools/project_two:angular_ts_library.bzl", "ng_ts_project")
-load("@npm//@babel/cli:index.bzl", "babel")
-load("@npm//@bazel/terser:index.bzl", "terser_minified")
 load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
 load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+load("@npm//@babel/cli:index.bzl", "babel")
+load("@npm//@bazel/terser:index.bzl", "terser_minified")
 load("@npm//history-server:index.bzl", "history_server")
 
 package(default_visibility = ["//:__subpackages__"])
@@ -125,7 +125,7 @@ pkg_web(
 history_server(
     name = "devserver",
     data = [":devapp"],
-    templated_args = ["-a $$(rlocation $(rootpath :devapp)) -p 4200"],
+    templated_args = ["-a $$(rlocation $(rootpath :devapp)) -p 4201"],
 )
 
 ### Bazel Rules for Production Server
@@ -184,5 +184,5 @@ pkg_web(
 history_server(
     name = "prodserver",
     data = [":prodapp"],
-    templated_args = ["-a $$(rlocation $(rootpath :prodapp)) -p 4200"],
+    templated_args = ["-a $$(rlocation $(rootpath :prodapp)) -p 4201"],
 )

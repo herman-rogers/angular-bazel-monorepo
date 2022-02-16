@@ -12,6 +12,10 @@ To start a dev server run the bazel command per project, for example:
 
 `yarn bazelisk //projects/project_two:devserver`
 
+To start a prod server:
+
+`yarn bazelisk //projects/project_two:prodserver`
+
 ## Structure
 
 The structure of the monorepo is:

@@ -4,7 +4,6 @@ workspace(
         "@npm": ["node_modules"],
         "@npm_project_one": ["projects/project_one/node_modules"],
         "@npm_project_two": ["projects/project_two/node_modules"],
-        "@npm_lib_ts": ["projects/lib_ts/node_modules"],
     },
 )
 
@@ -85,13 +84,6 @@ yarn_install(
       "@packages/lib-js": "//packages/lib_js:lib_js",
       "@packages/lib-ts": "//packages/lib_ts:lib_ts",
     }
-)
-
-yarn_install(
-    name = "npm_lib_ts",
-    package_json = "//packages/lib_ts:package.json",
-    package_path = "packages/lib_ts",
-    yarn_lock = "//packages/lib_ts:yarn.lock",
 )
 
 yarn_install(
