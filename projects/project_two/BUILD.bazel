@@ -1,6 +1,7 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
 load("//tools/project_two:angular_ts_library.bzl", "ng_ts_project")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
 load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
 load("@npm//history-server:index.bzl", "history_server")
@@ -13,6 +14,11 @@ ts_config(
     deps = [
         "//:tsconfig",
     ],
+)
+
+sass_binary(
+    name = "styles",
+    src = "styles.scss",
 )
 
 ng_ts_project(
@@ -31,7 +37,7 @@ ng_ts_project(
 # Files that we serve in both development and production
 _ASSETS = [
     # This label references an output of the "styles" sass_binary above.
-    # ":styles.css",
+    ":styles.css",
     "//:favicon.ico",
 
     # Directly reference a file that came from @angular/material npm package

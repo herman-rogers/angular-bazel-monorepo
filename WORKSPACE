@@ -31,12 +31,33 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/4.6.2/rules_nodejs-4.6.2.tar.gz"],
 )
 
+# Fetch sass rules for compiling sass files
+http_archive(
+    name = "io_bazel_rules_sass",
+    patch_args = ["-p1"],
+    patches = [
+        # Updates @bazel/work dep to 4.0.0 inside rules_sass so it is compatible
+        "//:io_bazel_rules_sass.patch",
+    ],
+    sha256 = "5313032124ff191eed68efcfbdc6ee9b5198093b2b80a8e640ea34feabbffc69",
+    strip_prefix = "rules_sass-1.34.0",
+    urls = [
+        "https://github.com/bazelbuild/rules_sass/archive/1.34.0.zip",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_sass/archive/1.34.0.zip",
+    ],
+)
+
 # Check the bazel version and download npm dependencies
 load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories", "yarn_install")
 
 node_repositories(
     node_version = "12.14.1",
 )
+
+# Setup the rules_sass toolchain
+load("@io_bazel_rules_sass//sass:sass_repositories.bzl", "sass_repositories")
+
+sass_repositories()
 
 yarn_install(
     name = "npm",
