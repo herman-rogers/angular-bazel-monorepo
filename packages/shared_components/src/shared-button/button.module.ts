@@ -4,7 +4,7 @@ import { SharedButtonComponent } from './button.component';
 
 @NgModule({
   declarations: [SharedButtonComponent],
-  imports: [MatButtonModule],
+  imports: [],
   exports: [SharedButtonComponent],
 })
 export class SharedButtonModule {}

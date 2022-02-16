@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   template: `
     <div>
       <p>Dashboard Example</p>
-      <button mat-button>Material Button</button>
+      <shared-button></shared-button>
     </div>
   `,
 })

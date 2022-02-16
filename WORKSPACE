@@ -63,7 +63,6 @@ yarn_install(
     name = "npm",
     package_json = "//:package.json",
     yarn_lock = "//:yarn.lock",
-    exports_directories_only = False,
 )
 
 yarn_install(
@@ -71,7 +70,9 @@ yarn_install(
     package_json = "//projects/project_one:package.json",
     package_path = "projects/project_one",
     yarn_lock = "//projects/project_one:yarn.lock",
-    exports_directories_only = False,
+    links = {
+      "@packages/shared-components": "//packages/shared_components:shared_components",
+    }
 )
 
 yarn_install(
@@ -79,7 +80,9 @@ yarn_install(
     package_json = "//projects/project_two:package.json",
     package_path = "projects/project_two",
     yarn_lock = "//projects/project_two:yarn.lock",
-    exports_directories_only = False,
+    links = {
+      "@packages/shared-components": "//packages/shared_components:shared_components",
+    }
 )
 
 yarn_install(
@@ -87,7 +90,6 @@ yarn_install(
     package_json = "//packages/libOne:package.json",
     package_path = "packages/libOne",
     yarn_lock = "//packages/libOne:yarn.lock",
-    exports_directories_only = False,
 )
 
 yarn_install(
@@ -95,6 +97,5 @@ yarn_install(
     package_json = "//packages/shared_components:package.json",
     package_path = "packages/shared_components",
     yarn_lock = "//packages/shared_components:yarn.lock",
-    exports_directories_only = False,
 )
 

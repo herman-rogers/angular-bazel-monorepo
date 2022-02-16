@@ -10,6 +10,6 @@ ng_ts_project(
     ],
     deps = [
         "@npm_shared_components//@angular/core",
-        "@npm_shared_components//@angular/material"
+        "@npm_shared_components//@angular/material",
     ],
 )

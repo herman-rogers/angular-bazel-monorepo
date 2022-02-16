@@ -7,6 +7,7 @@ ng_ts_project(
     srcs = glob(["*.ts"]),
     deps = [
         "@npm_project_two//@angular/core",
-        "//packages/shared_components",
+        # "//packages/shared_components",
+        "@npm_project_two//@packages/shared-components"
     ],
 )

@@ -31,6 +31,7 @@ ng_ts_project(
         "//projects/project_two/src/app",
         "@npm_project_two//@angular/core",
         "@npm_project_two//@angular/platform-browser",
+        # "@npm_project_two//@packages/shared-components",
     ],
 )
 

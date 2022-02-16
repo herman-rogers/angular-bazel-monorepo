@@ -18,7 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@packages/*": ["./packages/*"],
-      "@packages/shared_components/*": [
+      "@packages/shared-components/*": [
         "./bazel-out/darwin-fastbuild/bin/packages/shared_components/src/*"
       ]
     },

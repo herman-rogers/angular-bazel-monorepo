@@ -31,6 +31,8 @@ import { Component } from '@angular/core';
 
       <span>Project Two</span>
     </mat-toolbar>
+
+    <project-two-dashboard></project-two-dashboard>
   `,
 })
 export class AppComponent {}

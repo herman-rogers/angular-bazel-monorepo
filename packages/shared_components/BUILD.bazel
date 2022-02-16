@@ -23,7 +23,7 @@ ng_ts_project(
 
 js_library(
     name = "shared_components",
-    package_name = "@packages/shared_components",
+    package_name = "@packages/shared-components",
     deps = [
         ":ts",
     ],

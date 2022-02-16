@@ -7,5 +7,6 @@ def ng_ts_project(**kwargs):
         tsc = "@npm_libOne//@angular/compiler-cli/bin:ngc",
         tsconfig = "//packages/libOne:tsconfig",
         declaration = True,
+        declaration_map = True,
         **kwargs
     )
