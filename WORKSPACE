@@ -70,10 +70,10 @@ yarn_install(
 )
 
 yarn_install(
-    name = "npm_angularLib",
-    package_json = "//packages/angularLib:package.json",
-    package_path = "packages/angularLib",
-    yarn_lock = "//packages/angularLib:yarn.lock",
+    name = "npm_shared_components",
+    package_json = "//packages/shared_components:package.json",
+    package_path = "packages/shared_components",
+    yarn_lock = "//packages/shared_components:yarn.lock",
     exports_directories_only = False,
 )
 

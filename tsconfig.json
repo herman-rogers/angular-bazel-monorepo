@@ -18,8 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@packages/*": ["./packages/*"],
-      "@packages/angularLib/*": [
-        "./bazel-out/darwin-fastbuild/bin/packages/angularLib/src/*"
+      "@packages/shared_components/*": [
+        "./bazel-out/darwin-fastbuild/bin/packages/shared_components/src/*"
       ]
     },
     "rootDirs": [
@@ -67,15 +67,15 @@
       "./bazel-out/k8-dbg/bin/packages/libJs",
       "./bazel-out/x64_windows-dbg/bin/packages/libJs",
 
-      // angularLib
-      // "./packages/angularLib/src",
-      "./bazel-out/host/bin/packages/angularLib/src",
-      "./bazel-out/darwin-fastbuild/bin/packages/angularLib/src",
-      "./bazel-out/k8-fastbuild/bin/packages/angularLib/src",
-      "./bazel-out/x64_windows-fastbuild/bin/packages/angularLib/src",
-      "./bazel-out/darwin-dbg/bin/packages/angularLib/src",
-      "./bazel-out/k8-dbg/bin/packages/angularLib/src",
-      "./bazel-out/x64_windows-dbg/bin/packages/angularLib/src"
+      // shared_components
+      "./packages/shared_components/src",
+      "./bazel-out/host/bin/packages/shared_components/src",
+      "./bazel-out/darwin-fastbuild/bin/packages/shared_components/src",
+      "./bazel-out/k8-fastbuild/bin/packages/shared_components/src",
+      "./bazel-out/x64_windows-fastbuild/bin/packages/shared_components/src",
+      "./bazel-out/darwin-dbg/bin/packages/shared_components/src",
+      "./bazel-out/k8-dbg/bin/packages/shared_components/src",
+      "./bazel-out/x64_windows-dbg/bin/packages/shared_components/src"
     ]
   }
 }

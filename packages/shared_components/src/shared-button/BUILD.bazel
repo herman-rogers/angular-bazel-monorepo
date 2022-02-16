@@ -1,0 +1,15 @@
+load("//tools/shared_components:angular_ts_library.bzl", "ng_ts_project")
+
+package(default_visibility = ["//visibility:public"])
+
+ng_ts_project(
+    name = "shared-button",
+    srcs = [
+        "button.module.ts",
+        "button.component.ts",
+    ],
+    deps = [
+        "@npm_shared_components//@angular/common",
+        "@npm_shared_components//@angular/material"
+    ],
+)

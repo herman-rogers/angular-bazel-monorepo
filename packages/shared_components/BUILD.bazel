@@ -1,6 +1,6 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "js_library")
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
-load("//tools/angularLib:angular_ts_library.bzl", "ng_ts_project")
+load("//tools/shared_components:angular_ts_library.bzl", "ng_ts_project")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -14,19 +14,16 @@ ts_config(
 
 ng_ts_project(
     name = "ts",
-    srcs = [
-        "index.ts",
-        "ang-lib.component.ts",
-        "ang-lib.module.ts",
-    ],
+    srcs = ["index.ts"],
     deps = [
-        "@npm_angularLib//@angular/common",
+        "//packages/shared_components/src/shared-button",
+        "@npm_shared_components//@angular/common",
     ],
 )
 
 js_library(
-    name = "angularLib",
-    package_name = "@packages/angularLib",
+    name = "shared_components",
+    package_name = "@packages/shared_components",
     deps = [
         ":ts",
     ],
