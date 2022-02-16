@@ -2,11 +2,16 @@
 
 load("@npm//@bazel/typescript:index.bzl", "ts_project")
 
-def ng_ts_project(**kwargs):
+def ng_ts_project(deps = [], **kwargs):
+    deps = [
+        "@npm_shared_components//:node_modules",
+    ] + deps
+
     ts_project(
         tsc = "@npm_project_two//@angular/compiler-cli/bin:ngc",
         tsconfig = "//projects/project_two:tsconfig",
         declaration = True,
         declaration_map = True,
+        deps = deps,
         **kwargs
     )

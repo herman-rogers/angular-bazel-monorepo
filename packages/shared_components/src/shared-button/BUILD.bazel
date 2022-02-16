@@ -9,7 +9,7 @@ ng_ts_project(
         "button.component.ts",
     ],
     deps = [
-        "@npm_shared_components//@angular/common",
+        "@npm_shared_components//@angular/core",
         "@npm_shared_components//@angular/material"
     ],
 )
