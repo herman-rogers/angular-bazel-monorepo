@@ -2,7 +2,15 @@
 
 Example angular bazel monorepo using rules_nodejs
 
-Run `yarn build` to build all projects and packages.
+## Quick Start
+
+Make sure to run `yarn install` at the root and for the `shared_components` directory.
+
+You only need to run `yarn install` for each project you want to run.
+
+To start a dev server run the bazel command per project, for example:
+
+`yarn bazelisk //projects/project_two:devserver`
 
 ## Structure
 
@@ -10,7 +18,9 @@ The structure of the monorepo is:
 
 Bazel WORKSPACE at the root then all libraries in `packages/`, all apps in `projects/`, and all bazel specific tools in `tools/`.
 
-Each package / project as its own tsconfig along with its own dependency chain (package.json / node_modules).
+Each angular project in projects (and the shared library in packages) has its own package.json, node_modules, and tsconfig.
+
+The javascript library and typescript library use normal bazel rules and only contain a tsconfig.json.
 
 The current structure is:
 
@@ -22,9 +32,8 @@ The current structure is:
 
 - packages
 
-  - libOne
+  - lib_ts
     - tsconfig.json
-    - package.json
 
 - projects
 
@@ -36,9 +45,9 @@ The current structure is:
     - package.json
 
 - tools
-  - libOne
   - project_one
   - project_two
+  - shared_components
 
 ## Javascript Library
 

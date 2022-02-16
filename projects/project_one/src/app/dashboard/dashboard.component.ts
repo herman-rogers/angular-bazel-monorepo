@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { fakeLib, utilOne } from '@packages/libOne';
+// import { fakeLib, utilOne } from '@packages/lib_ts';
 // import { fakeJsLib } from '@packages/lib_js';
 
 @Component({

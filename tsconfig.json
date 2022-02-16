@@ -50,15 +50,15 @@
       "./bazel-out/k8-dbg/bin/projects/project_two",
       "./bazel-out/x64_windows-dbg/bin/projects/project_two",
 
-      // libOne
-      "./packages/libOne",
-      "./bazel-out/host/bin/packages/libOne",
-      "./bazel-out/darwin-fastbuild/bin/packages/libOne",
-      "./bazel-out/k8-fastbuild/bin/packages/libOne",
-      "./bazel-out/x64_windows-fastbuild/bin/packages/libOne",
-      "./bazel-out/darwin-dbg/bin/packages/libOne",
-      "./bazel-out/k8-dbg/bin/packages/libOne",
-      "./bazel-out/x64_windows-dbg/bin/packages/libOne",
+      // lib_ts
+      "./packages/lib_ts",
+      "./bazel-out/host/bin/packages/lib_ts",
+      "./bazel-out/darwin-fastbuild/bin/packages/lib_ts",
+      "./bazel-out/k8-fastbuild/bin/packages/lib_ts",
+      "./bazel-out/x64_windows-fastbuild/bin/packages/lib_ts",
+      "./bazel-out/darwin-dbg/bin/packages/lib_ts",
+      "./bazel-out/k8-dbg/bin/packages/lib_ts",
+      "./bazel-out/x64_windows-dbg/bin/packages/lib_ts",
 
       // lib_js
       "./packages/lib_js",

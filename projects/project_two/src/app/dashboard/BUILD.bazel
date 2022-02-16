@@ -10,5 +10,6 @@ ng_ts_project(
         "@npm_project_two//@angular/material",
         "@npm_project_two//@packages/shared-components",
         "@npm_project_two//@packages/lib-js",
+        "@npm_project_two//@packages/lib-ts",
     ],
 )

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { fakeLib, utilOne } from '@packages/libOne';
+import { increment_number } from '@packages/lib-ts';
 import { getJsString } from '@packages/lib-js';
 
 @Component({
@@ -7,7 +7,8 @@ import { getJsString } from '@packages/lib-js';
   template: `
     <div>
       <p>Dashboard Example</p>
-      <p>Check JS Lib: {{ jsString() }}</p>
+      <p>JS Lib: {{ jsString() }}</p>
+      <p>TS Lib: {{ tsNumber(1) }}</p>
 
       <shared-button></shared-button>
     </div>
@@ -16,5 +17,9 @@ import { getJsString } from '@packages/lib-js';
 export class DashboardComponent {
   jsString(): string {
     return getJsString();
+  }
+
+  tsNumber(n: number): number {
+    return increment_number(n);
   }
 }
