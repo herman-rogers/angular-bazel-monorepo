@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import { fakeLib, utilOne } from '@packages/lib_ts';
-// import { fakeJsLib } from '@packages/lib_js';
 
 @Component({
   selector: 'project-one-dashboard',
@@ -8,6 +6,8 @@ import { Component } from '@angular/core';
     <div>
       <p>Dashboard Example</p>
       <shared-button>Shared Button</shared-button>
+
+      <!-- <hero-detail></hero-detail> -->
     </div>
   `,
 })

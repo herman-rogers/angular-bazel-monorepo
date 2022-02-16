@@ -1,0 +1,12 @@
+load("//tools/project_one:angular_ts_library.bzl", "ng_ts_project")
+
+package(default_visibility = ["//:__subpackages__"])
+
+ng_ts_project(
+    name = "hero",
+    srcs = glob(["*.ts"]),
+    deps = [
+        "@npm_project_one//angular",
+        "@npm_project_one//@types/angular",
+    ],
+)

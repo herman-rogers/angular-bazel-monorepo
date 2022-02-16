@@ -1,3 +1,5 @@
+import * as angular from 'angular';
+import { setAngularJSGlobal, UpgradeModule } from '@angular/upgrade/static';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +14,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    UpgradeModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -21,4 +24,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    // @ts-ignore
+    setAngularJSGlobal(angular.default || angular);
+  }
+}

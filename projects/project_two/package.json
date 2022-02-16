@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/herman-rogers/angular-bazel-monorepo.git"
   },
-  "author": "",
+  "author": "Herman Rogers",
   "license": "MIT",
   "devDependencies": {
     "@angular/animations": "10.0.0",

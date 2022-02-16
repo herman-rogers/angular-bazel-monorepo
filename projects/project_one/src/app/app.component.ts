@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { UpgradeModule } from '@angular/upgrade/static';
+import { app } from '../../src-legacy/app/legacy.app';
 
 @Component({
   selector: 'app-component',
@@ -31,8 +33,16 @@ import { Component } from '@angular/core';
     </mat-toolbar>
 
     <project-one-dashboard></project-one-dashboard>
+
+    <div #legacyApp ui-view></div>
   `,
 })
-export class AppComponent {
-  example: string = '';
+export class AppComponent implements AfterViewInit {
+  @ViewChild('legacyApp', { static: false }) legacyApp: ElementRef;
+
+  constructor(private upgrade: UpgradeModule) {}
+
+  ngAfterViewInit() {
+    this.upgrade.bootstrap(this.legacyApp.nativeElement, [app.name]);
+  }
 }

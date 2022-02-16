@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/herman-rogers/angular-bazel-monorepo.git"
   },
-  "author": "",
+  "author": "Herman Rogers",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.6.0",

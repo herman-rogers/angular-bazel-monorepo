@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/herman-rogers/angular-bazel-monorepo.git"
   },
-  "author": "",
+  "author": "Boomer Rogers",
   "license": "MIT",
   "dependencies": {
     "@angular/animations": "10.0.0",
@@ -24,6 +24,11 @@
     "@angular/material": "10.0.0",
     "@angular/platform-browser": "10.0.0",
     "@angular/platform-browser-dynamic": "10.0.0",
+    "@angular/upgrade": "10.0.0",
+    "@types/angular": "^1.7.2",
+    "@types/jquery": "^3.3.30",
+    "angular": "^1.7.9",
+    "jquery": "^3.4.1",
     "rxjs": "^6.5.3",
     "typescript": "3.9.2",
     "zone.js": "^0.10.3"

@@ -4,15 +4,15 @@ package(default_visibility = ["//:__subpackages__"])
 
 ng_ts_project(
     name = "app",
-    srcs = ["app.module.ts", "app.component.ts"],
+    srcs = glob(["*.ts"]),
     deps = [
-        "//projects/project_one/src-legacy/app",
-        "//projects/project_one/src/app/dashboard",
+        "@npm//@types/node",
         "@npm_project_one//@angular/common",
-        "@npm_project_one//@angular/core",
-        "@npm_project_one//@angular/material",
-        "@npm_project_one//@angular/platform-browser",
         "@npm_project_one//@angular/upgrade",
+        "@npm_project_one//@types/angular",
+        "@npm_project_one//@types/jquery",
         "@npm_project_one//angular",
+        "@npm_project_one//jquery",
+        "//projects/project_one/src-legacy/app/hero"
     ],
 )
