@@ -82,6 +82,7 @@ yarn_install(
     yarn_lock = "//projects/project_two:yarn.lock",
     links = {
       "@packages/shared-components": "//packages/shared_components:shared_components",
+      "@packages/lib-js": "//packages/lib_js:lib_js",
     }
 )
 

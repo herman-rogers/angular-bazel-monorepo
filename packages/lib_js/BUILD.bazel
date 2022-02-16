@@ -11,30 +11,21 @@ ts_config(
     ],
 )
 
-js_library(
-    name = "js",
-    srcs = [
-        "lib.d.ts",
-        "lib.js",
-    ],
-)
-
 ts_project(
     name = "ts",
-    srcs = [
-        "index.ts",
-    ],
+    srcs = ["index.ts"],
     declaration = True,
+    declaration_map = True,
     tsconfig = ":tsconfig",
     deps = [
-        ":js",
+        "//packages/lib_js/src",
         "@npm//@types/node",
     ],
 )
 
 js_library(
-    name = "libJs",
-    package_name = "@packages/libJs",
+    name = "lib_js",
+    package_name = "@packages/lib-js",
     deps = [
         ":ts",
     ],

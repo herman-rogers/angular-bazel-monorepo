@@ -8,6 +8,7 @@ ng_ts_project(
     deps = [
         "@npm_project_two//@angular/core",
         "@npm_project_two//@angular/material",
-        "@npm_project_two//@packages/shared-components"
+        "@npm_project_two//@packages/shared-components",
+        "@npm_project_two//@packages/lib-js",
     ],
 )

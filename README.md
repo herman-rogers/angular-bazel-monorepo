@@ -42,6 +42,6 @@ The current structure is:
 
 ## Javascript Library
 
-packages/libJs imports javascript into the Bazel ecosystem for Angular. It uses two specific rules `js_library` and `ts_project` which allows javascript to be imported, with manually generated declaration files, and can then be imported in other parts of the monorepo.
+packages/lib_js imports javascript into the Bazel ecosystem for Angular. It uses two specific rules `js_library` and `ts_project` which allows javascript to be imported, with manually generated declaration files, and can then be imported in other parts of the monorepo.
 
 To generate .d.ts files run `tsc packages/**/*.js --declaration --allowJs --emitDeclarationOnly`.

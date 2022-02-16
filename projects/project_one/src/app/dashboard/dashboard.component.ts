@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // import { fakeLib, utilOne } from '@packages/libOne';
-// import { fakeJsLib } from '@packages/libJs';
+// import { fakeJsLib } from '@packages/lib_js';
 
 @Component({
   selector: 'project-one-dashboard',

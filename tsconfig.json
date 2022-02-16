@@ -17,10 +17,13 @@
     // Custom Library Paths
     "baseUrl": ".",
     "paths": {
-      "@packages/*": ["./packages/*"],
       "@packages/shared-components/*": [
-        "./bazel-out/darwin-fastbuild/bin/packages/shared_components/src/*"
-      ]
+        "./bazel-out/darwin-fastbuild/bin/packages/shared_components/*"
+      ],
+      "@packages/lib-js/*": [
+        "./bazel-out/darwin-fastbuild/bin/packages/lib_js/*"
+      ],
+      "@packages/*": ["./packages/*"]
     },
     "rootDirs": [
       ".",
@@ -57,15 +60,15 @@
       "./bazel-out/k8-dbg/bin/packages/libOne",
       "./bazel-out/x64_windows-dbg/bin/packages/libOne",
 
-      // libJS
-      "./packages/libJs",
-      "./bazel-out/host/bin/packages/libJs",
-      "./bazel-out/darwin-fastbuild/bin/packages/libJs",
-      "./bazel-out/k8-fastbuild/bin/packages/libJs",
-      "./bazel-out/x64_windows-fastbuild/bin/packages/libJs",
-      "./bazel-out/darwin-dbg/bin/packages/libJs",
-      "./bazel-out/k8-dbg/bin/packages/libJs",
-      "./bazel-out/x64_windows-dbg/bin/packages/libJs",
+      // lib_js
+      "./packages/lib_js",
+      "./bazel-out/host/bin/packages/lib_js",
+      "./bazel-out/darwin-fastbuild/bin/packages/lib_js",
+      "./bazel-out/k8-fastbuild/bin/packages/lib_js",
+      "./bazel-out/x64_windows-fastbuild/bin/packages/lib_js",
+      "./bazel-out/darwin-dbg/bin/packages/lib_js",
+      "./bazel-out/k8-dbg/bin/packages/lib_js",
+      "./bazel-out/x64_windows-dbg/bin/packages/lib_js",
 
       // shared_components
       "./packages/shared_components/src",
