@@ -1,7 +1,11 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
 load("@npm//@bazel/typescript:index.bzl", "ts_config")
 load("//tools/project_two:angular_ts_library.bzl", "ng_ts_project")
+load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
+load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+load("@npm//history-server:index.bzl", "history_server")
 
-package(default_visibility = ["//visibility:public"])
+package(default_visibility = ["//:__subpackages__"])
 
 ts_config(
     name = "tsconfig",
@@ -12,16 +16,86 @@ ts_config(
 )
 
 ng_ts_project(
-    name = "project_two",
-    srcs = glob(["*.ts"]),
-    tsconfig = ":tsconfig",
-    deps = [
-        "//packages/libOne",
-        "//packages/angularLib",
-        "//projects/project_two/button",
-        "@npm//@types/node",
-        "@npm_project_two//@angular/core",
-        "@npm_project_two//@angular/common",
-        "@npm_angularLib//:node_modules",
+    name = "src",
+    srcs = [
+        "main.dev.ts", 
+        # "main.prod.ts",
     ],
+    deps = [
+        "//projects/project_two/src/app",
+        "@npm_project_two//@angular/core",
+        "@npm_project_two//@angular/platform-browser",
+    ],
+)
+
+# Files that we serve in both development and production
+_ASSETS = [
+    # This label references an output of the "styles" sass_binary above.
+    # ":styles.css",
+    "//:favicon.ico",
+
+    # Directly reference a file that came from @angular/material npm package
+    "@npm_project_two//:node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+
+    # We load zone.js outside the bundle. That's because it's a "pollyfill"
+    # which speculates that such features might be available in a browser.
+    # Also it's tricky to configure dead code elimination to understand that
+    # zone.js is used, given that we don't have any import statement that
+    # imports from it.
+    "@npm_project_two//:node_modules/zone.js/dist/zone.min.js",
+]
+
+rollup_bundle(
+    name = "bundle-es2015",
+    config_file = "rollup.config.js",
+    entry_points = {
+        ":main.dev.ts": "index.dev",
+    },
+    output_dir = True,
+    deps = [
+        ":src",
+        "@npm//@rollup/plugin-commonjs",
+        "@npm//@rollup/plugin-node-resolve",
+    ],
+)
+
+html_insert_assets(
+    name = "inject_scripts_for_dev",
+    outs = ["index.html"],
+    args = [
+        "--html=$(execpath :index.dev.html)",
+        "--out=$@",
+        "--roots=. $(RULEDIR)",
+        "--assets",
+    ] + ["$(execpath %s)" % s for s in _ASSETS] + [
+        "--scripts --module $(execpath :bundle-es2015)/index.dev.js",
+    ],
+    data = [
+        ":index.dev.html",
+        ":bundle-es2015",
+    ] + _ASSETS,
+)
+
+pkg_web(
+    name = "devapp",
+    srcs = _ASSETS + [
+        ":bundle-es2015",
+        ":inject_scripts_for_dev",
+        # "//src/assets",
+        # Include polyfills that will be requested by old browsers
+        "@npm//:node_modules/systemjs/dist/system.js",
+        "@npm//:node_modules/core-js/client/core.min.js",
+    ],
+    # In production mode we serve some polyfills with script tags that have hard-coded paths in the index.html
+    # so we must serve them at that path, by stripping a prefix
+    additional_root_paths = [
+        "npm/node_modules/systemjs/dist",
+        "npm/node_modules/core-js/client",
+    ],
+)
+
+history_server(
+    name = "devserver",
+    data = [":devapp"],
+    templated_args = ["-a $$(rlocation $(rootpath :devapp)) -p 4200"],
 )

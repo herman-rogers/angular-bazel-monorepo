@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AngularLibModule } from '@packages/angularLib';
+import { BrowserModule } from '@angular/platform-browser';
+// import { AngularLibModule } from '@packages/angularLib';
 import { AppComponent } from './app.component';
 // import { ButtonModule } from './button/button.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [CommonModule, AngularLibModule],
-  exports: [AppComponent],
+  imports: [BrowserModule],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

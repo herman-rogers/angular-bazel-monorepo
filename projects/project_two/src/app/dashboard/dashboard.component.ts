@@ -3,14 +3,12 @@ import { Component } from '@angular/core';
 // import { fakeJsLib } from '@packages/libJs';
 
 @Component({
-  selector: 'app-component',
+  selector: 'project-two-dashboard',
   template: `
     <div>
-      <h1>Welcome to Project One</h1>
-      <project-one-dashboard></project-one-dashboard>
+      <p>Dashboard Example</p>
+      <button mat-button>Material Button</button>
     </div>
   `,
 })
-export class AppComponent {
-  example: string = '';
-}
+export class DashboardComponent {}
