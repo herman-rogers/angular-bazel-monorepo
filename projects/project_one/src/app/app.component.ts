@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import { fakeLib, utilOne } from '@packages/libOne';
-// import { fakeJsLib } from '@packages/libJs';
 
 @Component({
   selector: 'app-component',
@@ -31,6 +29,8 @@ import { Component } from '@angular/core';
 
       <span>Project One</span>
     </mat-toolbar>
+
+    <project-one-dashboard></project-one-dashboard>
   `,
 })
 export class AppComponent {
